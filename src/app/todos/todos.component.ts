@@ -19,6 +19,11 @@ export class TodosComponent implements OnInit {
     this.listTodos();
   }
 
+    
+  deleteTodo(id: string) {
+    client.models.Todo.delete({ id })
+  }
+
   listTodos() {
     try {
       client.models.Todo.observeQuery().subscribe({

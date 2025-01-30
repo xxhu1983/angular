@@ -1,0 +1,18 @@
+<h3>Order Book</h3>
+<div class="orderbook">
+  <table class="ordertable">
+    <tr><th>Price</th><th>Quantity</th></tr>
+    <tr *ngFor="let order of sellOrders; trackBy: trackOrder"  class="sell">
+      <td>{{ order.price }}</td>
+      <td (click)="executeTrade(order.price, 'sell')">{{ order.quantity }}</td>
+    </tr>
+  </table>
+
+  <table class="ordertable">
+    <tr><th>Price</th><th>Quantity</th></tr>
+    <tr *ngFor="let order of buyOrders; trackBy: trackOrder"  class="buy">
+      <td>{{ order.price }}</td>
+      <td (click)="executeTrade(order.price, 'buy')">{{ order.quantity }}</td>
+    </tr>
+  </table>
+</div>

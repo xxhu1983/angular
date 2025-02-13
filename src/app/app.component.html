@@ -1,2 +1,43 @@
-<!-- <app-todos></app-todos> -->
- <app-orderbook></app-orderbook>
+<div class="container">
+
+    
+<header>
+    <div >
+      <h1>My App</h1>
+    </div>
+    <nav>
+      <ul class="nav-menu">
+        <li >
+          <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+        </li>
+        <li>
+          <a routerLink="/play" routerLinkActive="active">Play</a>
+        </li>
+        <li>
+          <a routerLink="/trade" routerLinkActive="active">Trade</a>
+        </li>
+        <li>
+          <a routerLink="/parent" routerLinkActive="active">Parent</a>
+        </li>
+        <li>
+          <a routerLink="/cal" routerLinkActive="active">Calculation</a>
+        </li>
+        <li>
+          <a routerLink="/login" routerLinkActive="active">Login</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <router-outlet></router-outlet>
+
+  </main>
+  <footer>
+    <span>
+  <p style="display:inline; margin:5px;">Sign Out</p>
+  <button (click)="logout()">Sign Out</button>
+  <p style="display:inline; margin:10px;">&copy; 2025 My App. All rights reserved.</p>
+</span>
+  </footer>
+
+</div>

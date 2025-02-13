@@ -1,0 +1,4 @@
+form div { margin-bottom: 15px; }
+input.ng-touched.ng-invalid { border: 1px solid red; }
+small { color: red; }
+button { padding: 8px 12px; }

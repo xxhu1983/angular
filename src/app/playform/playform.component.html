@@ -1,0 +1,49 @@
+<h2>User Registration Form</h2>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+      <!-- Username Field -->
+      <div>
+        <label for="username">Username:</label>
+        <input id="username" formControlName="username" placeholder="Enter your username">
+        <!-- Error messages for username -->
+        <div *ngIf="username.invalid && (username.dirty || username.touched)">
+          <small *ngIf="username.errors?.['required']">Username is required.</small>
+          <small *ngIf="username.errors?.['minlength']">
+            Username must be at least {{ username.errors?.['minlength'].requiredLength }} characters long.
+          </small>
+        </div>
+      </div>
+
+      <!-- Email Field -->
+      <div>
+        <label for="email">Email:</label>
+        <input id="email" formControlName="email" placeholder="Enter your email">
+        <!-- Error messages for email -->
+        <div *ngIf="email.invalid && (email.dirty || email.touched)">
+          <small *ngIf="email.errors?.['required']">Email is required.</small>
+          <small *ngIf="email.errors?.['pattern']">Please enter a valid email address.</small>
+        </div>
+      </div>
+
+      <!-- Password Field -->
+      <div>
+        <label for="password">Password:</label>
+        <input id="password" type="password" formControlName="password" placeholder="Enter your password">
+        <!-- Error messages for password -->
+        <div *ngIf="password.invalid && (password.dirty || password.touched)">
+          <small *ngIf="password.errors?.['required']">Password is required.</small>
+          <small *ngIf="password.errors?.['minlength']">
+            Password must be at least {{ password.errors?.['minlength'].requiredLength }} characters long.
+          </small>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" [disabled]="userForm.invalid">Submit</button>
+    </form>
+
+    <!-- Display Submitted Data -->
+    <div *ngIf="submitted">
+      <h3>Form Submitted Successfully!</h3>
+      <pre>{{ userForm.value | json }}</pre>
+    </div>

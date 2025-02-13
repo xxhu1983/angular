@@ -1,0 +1,27 @@
+<div *ngIf="!isPasswordChangeRequired">
+    <h2>Login</h2>
+  <input type="text" [(ngModel)]="username" placeholder="Username" />
+  <input type="password" [(ngModel)]="password" placeholder="Password" />
+  <button (click)="login()">Login</button>
+
+  <h2>Sign Up</h2>
+  <input type="text" [(ngModel)]="username" placeholder="Username" />
+  <input type="password" [(ngModel)]="password" placeholder="Password" />
+  <input type="email" [(ngModel)]="email" placeholder="Email" />
+  <button (click)="signup()">Sign Up</button>
+
+
+</div>
+
+  <div *ngIf="isPasswordChangeRequired">
+    <h2>Set New Password</h2>
+    <input type="text" [(ngModel)]="username" placeholder="Username" />
+    <input type="password" [(ngModel)]="newPassword" placeholder="New Password" />
+    <button (click)="changePassword()">Change Password</button>
+  </div>
+
+  
+  <div *ngIf="errorMessage" style="color: red;">{{ errorMessage }}</div>
+  
+  <h1>Sign Out</h1>
+  <button (click)="signout()">Sign Out</button>

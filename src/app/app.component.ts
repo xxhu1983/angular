@@ -1,19 +1,24 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { TodosComponent } from './todos/todos.component';
-import { Amplify } from 'aws-amplify';
-import { OrderbookComponent } from './orderbooks/orderbook/orderbook.component';
-import outputs from '../../amplify_outputs.json';
+import { RouterOutlet, RouterModule} from '@angular/router';
+import { AuthService } from './auth/authservice';
+import { Router } from '@angular/router';
 
-Amplify.configure(outputs);
 
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
-  imports: [RouterOutlet, TodosComponent, OrderbookComponent],
+  imports: [RouterOutlet,RouterModule],
 })
 export class AppComponent {
-  title = 'amplify-angular-template';
+  title = 'Real-Time House Bidding App';
+  constructor(private authService: AuthService, private router: Router) {
+
+  }
+
+  logout() {
+    this.authService.logout();  
+    this.router.navigate(['/login']);
+  }
 }

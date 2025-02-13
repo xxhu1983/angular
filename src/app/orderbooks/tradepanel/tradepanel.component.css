@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+  }
+  
+  .left-panel {
+    flex: 3; /* 30% of the width */
+    background-color: #f4f4f4;
+    padding: 10px;
+  }
+  
+  .right-panel {
+    flex: 7; /* 70% of the width */
+    padding: 10px;
+    background-color: white;
+  }

@@ -27,3 +27,7 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('h1')?.textContent).toContain('Hello, amplify-angular-template');
   });
 });
+
+function beforeEach(arg0: () => Promise<void>) {
+  throw new Error('Function not implemented.');
+}

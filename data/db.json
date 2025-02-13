@@ -1,0 +1,18 @@
+{
+  "customers": [
+    { "id": 1, "name": "John Doe", "email": "john@example.com" },
+    { "id": 2, "name": "Jane Smith", "email": "jane@example.com" }
+  ],
+  "tickers": [
+    { "id": "AAPL", "price": 150, "volume": 10000 },
+    { "id": "GOOGL", "price": 2800, "volume": 5000 }
+  ],
+  "tickerDetails": [
+	{ "id": "AAPL", "high": 155, "low": 145, "open": 150, "close": 152 },
+	{ "id": "GOOGL", "high": 2850, "low": 2750, "open": 2800, "close": 2825 }
+  ],
+  "items": [
+    { "title": "Item 1", "description": "Description 1" },
+    { "title": "Item 2", "description": "Description 2" }
+  ]
+}
